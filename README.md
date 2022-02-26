@@ -1,4 +1,5 @@
 # Перевод булевой формулы в одну из нормальных форм
+[![Haskell CI](https://github.com/FeggieBoss/NormalFormsBoolFormula/actions/workflows/haskell.yml/badge.svg)](https://github.com/FeggieBoss/NormalFormsBoolFormula/actions/workflows/haskell.yml)
 ### Запуск:  
 ``` 
 $> stack build  
