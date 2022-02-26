@@ -1,8 +1,0 @@
-Test suite quick-check-tests: RUNNING...
-QuickCheck:
-+++ OK, passed 100 tests.
-+++ OK, passed 100 tests.
-+++ OK, passed 100 tests.
-UnitTests:
-Test suite quick-check-tests: PASS
-Test suite logged to: dist\test\mathlab1-0.1.0.0-quick-check-tests.log
