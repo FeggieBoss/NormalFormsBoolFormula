@@ -61,7 +61,13 @@ executable NormalFormsBoolFormula-exe
 test-suite quick-check-tests
   type: exitcode-stdio-1.0
   main-is: Test.hs
-  other-modules: Paths_NormalFormsBoolFormula
+  other-modules: 
+      Paths_NormalFormsBoolFormula
+    , FormulaDeclaration
+    , FormulaTransformation
+    , FormulaCalculation
+    , FormulaInstances
+    , FormulaSamples
   hs-source-dirs: 
       test
     , app
