@@ -2,6 +2,7 @@
 
 import           FormulaDeclaration
 import           FormulaTransformation
+import           FormulaInstances
 import           FormulaSamples
 import           Test.QuickCheck
 import           Test.Tasty (defaultMain, testGroup, TestTree)
@@ -65,8 +66,9 @@ isCNF :: Formula -> Bool
 isCNF (f1 `And` f2) = isCNF f1 && isCNF f2
 isCNF f = isDisjunctionClause f
 
-
-
+-- проверяет правильно ли осуществлён перевод в нормальную форму
+correctNormalForm :: (Formula -> Formula) -> (Formula -> Bool) -> Formula -> Bool 
+correctNormalForm toNF isNF f = (\f' -> isNF f' && f'==f) $ toNF f
 
 
 unitTests :: TestTree
@@ -163,5 +165,5 @@ toCNFtests = testGroup
 main :: IO ()
 main = do
     putStrLn $ "QuickCheck:"
-    mapM_ (quickCheck . (mapSize $ const 10)) [isNNF . toNNF, isDNF . toDNF, isCNF . toCNF]
+    mapM_ (quickCheck . (mapSize $ const 10)) [correctNormalForm toNNF isNNF, correctNormalForm toDNF isDNF, correctNormalForm toCNF isCNF]
     defaultMain unitTests

@@ -25,15 +25,18 @@ source-repository head
 
 library
   exposed-modules:
-    FormulaDeclaration
-    FormulaTransformation
-    FormulaSamples
+      FormulaDeclaration
+    , FormulaTransformation
+    , FormulaSamples
+    , FormulaCalculation
+    , FormulaInstances
   other-modules:
       Paths_mathlab1
   hs-source-dirs:
       tools
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable mathlab1-exe
@@ -42,6 +45,8 @@ executable mathlab1-exe
       Paths_mathlab1
     , FormulaDeclaration
     , FormulaTransformation
+    , FormulaCalculation
+    , FormulaInstances
   hs-source-dirs:
       app
     , tools
@@ -51,6 +56,7 @@ executable mathlab1-exe
     , mathlab1
     , QuickCheck
     , bytestring
+    , parsec
   default-language: Haskell2010
 
 test-suite quick-check-tests
