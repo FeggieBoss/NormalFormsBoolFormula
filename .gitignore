@@ -1,8 +1,3 @@
 .stack-work/
 *~
-dist/build
-dist/hpc
-dist/package.conf.inplace
-cabal-config-flags
-setup-config
 ChangeLog.md
