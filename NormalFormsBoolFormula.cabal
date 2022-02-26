@@ -80,4 +80,5 @@ test-suite quick-check-tests
     , bytestring
     , tasty
     , tasty-hunit
+    , parsec
   default-language: Haskell2010
